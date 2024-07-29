@@ -1,0 +1,72 @@
+[
+    {
+        "nombre": "Manzana",
+        "stock-inicial": 100,
+        "stock-actual": 100,
+        "precio": 0.5,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg"
+    },
+    {
+        "nombre": "Leche",
+        "stock-inicial": 50,
+        "stock-actual": 50,
+        "precio": 1.2,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Liquor_store_milk.jpg"
+    },
+    {
+        "nombre": "Pan",
+        "stock-inicial": 200,
+        "stock-actual": 200,
+        "precio": 0.8,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Whole_wheat_bread_slices.jpg"
+    },
+    {
+        "nombre": "Huevos",
+        "stock-inicial": 300,
+        "stock-actual": 300,
+        "precio": 0.1,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Huevos_01.jpg"
+    },
+    {
+        "nombre": "Queso",
+        "stock-inicial": 40,
+        "stock-actual": 40,
+        "precio": 2.5,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Swiss_cheese_cubes.jpg"
+    },
+    {
+        "nombre": "Tomate",
+        "stock-inicial": 120,
+        "stock-actual": 120,
+        "precio": 0.6,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg"
+    },
+    {
+        "nombre": "Pollo",
+        "stock-inicial": 60,
+        "stock-actual": 60,
+        "precio": 5.0,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Roast_chicken_with_potatoes.jpg"
+    },
+    {
+        "nombre": "Cereal",
+        "stock-inicial": 80,
+        "stock-actual": 80,
+        "precio": 3.0,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cereal.jpg"
+    },
+    {
+        "nombre": "Jugo de Naranja",
+        "stock-inicial": 100,
+        "stock-actual": 100,
+        "precio": 1.5,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Orange_juice_1.jpg"
+    },
+    {
+        "nombre": "Café",
+        "stock-inicial": 30,
+        "stock-actual": 30,
+        "precio": 4.0,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    }
+]
