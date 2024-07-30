@@ -83,28 +83,6 @@ let arts = [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let svg = `
 <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24" xmlns="http://www.w3.org/2000/svg" fill="#1d1a19">
     <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
@@ -149,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         row.innerHTML = `
             <td><img src="${product.imagen}" alt="${product.nombre}" width="50"></td>
             <td>${product.nombre}</td>
-            <td>${product.stock_inicial}</td>
+            <td>${product.stock_actual}</td>
             <td>${product.precio}</td>
             <td>
                 <div class="card__counter">
