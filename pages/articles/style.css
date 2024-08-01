@@ -4,8 +4,6 @@
 }
 
 
-
-
 :root{
     --darkness-gray: #B4B4B8;
     --lightness-gray: #C7C8CC;
@@ -19,57 +17,69 @@
     --buttons-color:#baa49c;
 }
 
+
+
+body{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/fondo-main.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: space-between;
+}
+
 /* MENU */
 
 .menu{
     will-change: transform;
-    background-color: var(--menu-background);
-    width: 100%;
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:fixed;
-    top: 0;
+    background-color: var(--cream);
+    width: 10%;
+    height: 100vh;
     z-index: 1000;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(3px);
+    position: -webkit-sticky; /* Para navegadores webkit (Safari, Chrome) */
+    position: sticky;
+    top: 0; /* Altura en la que se volverá sticky */
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.61); /* Sombra en el lado derecho */
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; 
 }
 
 .navbar-menu{
-    width: 80%;
-    height: 100%;
+    width: auto;
+    height: 85%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .navbar-menu-icon{
     box-sizing: border-box;
-    width: 10%;
-    height: 100%;
+    width: 100%;
+    height: 10%;
 }
 
 .navbar-menu-cont{
     box-sizing: border-box;
     list-style: none;
     display: flex;
-    width: 90%;
-    height: 100%;
-    justify-content: end;
-    align-items: center;
-    margin-right: 3%;
-    gap: 3%;
+    width: 100%;
+    height: 90%;
+    align-items: end;
+    margin: 3% 0;
+    justify-content: center;
 }
 
 
 .navbar-menu-links{
     text-decoration: none;
     font-style: none;
-    font-size: 1.3vw;
+    font-size: 75%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
     font-weight: bold;
-    width: 15%;
-    text-align: center;
+    width: 100%;
 }
 
 .navbar-menu-links>li{
@@ -95,20 +105,10 @@
 }
 
 .menu-icon{
-  width: 80%; 
-  height: 80%;
+  width: 70%; 
+  height: 70%;
   object-fit: contain;
 }
-
-.navbar-menu-cart{
-    width: 50px;
-    height: 50px;
-}
-.navbar-menu-cart-img{
-    width: 100%;
-    height: 100%;
-}
-
 /* ----------------------- */
 
 
@@ -120,19 +120,22 @@ main{
     display: flex;
     justify-content: center;
 
-    width: 100%;
-    background-image: url(../../assets/fondo-main.svg);
+    width: 82%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    /* background-image: url(../../assets/fondo-main.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;   
+    background-attachment: fixed;    */
 }
 .container{
     box-sizing: border-box;
-    width: 70%;
+    width: 90%;
     height: 100vh;
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,6 +196,25 @@ caption {
 
 
 /* CARDS */
+/* ----- Contendor de las cartas---------- */
+
+
+#articles{
+    overflow: scroll; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scroll-behavior: smooth; 
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 2rem;
+    row-gap: 3rem;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+  }
+
+/* ----- Estilo de las cartas---------- */
 .card {
     --main-color: #000;
     --bg-color: #ffffff;
@@ -248,8 +270,8 @@ caption {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 15px;
     color: var(--main-color);
     letter-spacing: 0.5px;
   }
@@ -377,20 +399,64 @@ input[type=number]{
     text-align: center;
 }
 
-/* --------------- */
 
 
-#articles{
-  overflow: scroll; 
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
-  scroll-behavior: smooth; 
-  display: grid;
-  grid-template-columns: 20rem 20rem 20rem;
-  margin-top: 100px;
-  row-gap: 3rem;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
+
+/* ----- ASIDE SECTION ------- */
+aside{
+    width: 8%;
+    height: 100vh;
+    z-index: 1000;
+    position: -webkit-sticky; /* Para navegadores webkit (Safari, Chrome) */
+    position: sticky;
+    top: 0; /* Altura en la que se volverá sticky */
+    align-items: end;
+    justify-content: end;
+    display: flex;
+    margin: 0;
+
+}
+
+#toggle_cart{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    background-color: var(--card-background);
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5), 10px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: all .6s;
+}
+
+#toggle_cart:hover{
+        box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+         8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+         17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+         36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+         99px 72px 143px rgba(0, 0, 0, 0.08);
+    background-color: var(--clay);
+}
+
+.aside-cart{
+    box-sizing: border-box;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-content: end;
+    justify-content: end;
+    margin-right: 15%;
+    margin-bottom: 15%;
+}
+
+
+
+.aside-cart-img{
+    width: 70%; 
+    height: 60%;
+    object-fit: contain;
+   
+}
+
+.aside-cart-img:hover{
+    background-color: transparent;
 }
