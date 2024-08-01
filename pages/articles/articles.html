@@ -11,7 +11,7 @@
     <header class="menu" id="menu">
         <nav class="navbar-menu">
             <div class="navbar-menu-icon">
-                <a class="navbar-menu-icon-link" href="#">
+                <a class="navbar-menu-icon-link" href="../../index.html">
                     <img class="menu-icon" src="../../assets/mercado.png" alt="">    
                 </a>
             </div>
@@ -20,32 +20,40 @@
                 <a class="navbar-menu-links" href="#"> <li>  SUGGESTIONS </li> </a>
             </ul>
             <div class="navbar-menu-cart">
-                <img src="../../assets/carrito-de-compras.png" class="navbar-menu-cart-img" alt="">
+                <button id="toggle_cart">
+                    <img src="../../assets/carrito-de-compras.png" class="navbar-menu-cart-img" alt="">
+                </button>
             </div>
         </nav>
     </header>
     
-
-
-
     <main>
         <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Nombre</th>
-                        <th>Stock</th>
-                        <th>Precio</th>
-                        <th>Cant</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="articles">
-                </tbody>
-            </table>
+
+            <div id="articles">
+
+
+            </div>
+
+
+
+            
         </div>
     </main>
+    <table id="cart_table" class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cant</th>
+                        <th>-</th>
+                    </tr>
+                </thead>
+                <tbody id="rows">
+                </tbody>
+            </table>
+
+
     <script type="module" src="articles.js" ></script>
 </body>
 </html>

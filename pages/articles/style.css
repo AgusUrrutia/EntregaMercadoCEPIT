@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
+
+
+
 :root{
     --darkness-gray: #B4B4B8;
     --lightness-gray: #C7C8CC;
@@ -115,6 +119,7 @@ main{
     will-change: transform;
     display: flex;
     justify-content: center;
+
     width: 100%;
     background-image: url(../../assets/fondo-main.svg);
     background-size: cover;
@@ -147,11 +152,18 @@ main{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(3px);
 }
-
+.hidden_cart{
+  left: 80%;
+  transition: all 1s linear;
+}
 table {
-    width: 80%;
+    position:fixed;
+    top: 8vh;
+    left: 100%;
+    width: 20%;
     border-collapse: collapse;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 1s linear;
 }
 th, td {
     padding: 12px 15px;
@@ -176,9 +188,110 @@ caption {
     color: #333;
 }
 
-
-
 /* ----------------------- */
+
+
+
+/* CARDS */
+.card {
+    --main-color: #000;
+    --bg-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    padding: 20px;
+    width: 80%;
+    background: var(--darkness-gray);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .card__back svg, .card__menu svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .card__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card__img {
+    width: 170px;
+    height: 170px;
+    background: linear-gradient(90deg, #FFF8F7, #F0F7DF);
+    border-radius: 100%;
+    margin-inline: auto;
+  }
+
+  .imgs{
+    mix-blend-mode: multiply;
+    background-color: white;
+  }
+  
+  .card__img svg {
+    height: 150px;
+    transform: rotate(-45deg) translate(15px, 0px);
+  }
+  
+  .card__title {
+    
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--main-color);
+  }
+  
+  .card__subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--main-color);
+    letter-spacing: 0.5px;
+  }
+  
+  .card__price {
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--main-color);
+  }
+  
+  .card__counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    background: #F7F7F7;
+    border-radius: 50px;
+  }
+  
+  .card__counter-score, .card__btn {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--main-color);
+  }
+  
+  .card__btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: none;
+    background: transparent;
+  }
+  
+  .card__btn-plus {
+    background: var(--bg-color);
+  }
+
+
+
+
+/* ------- */
 
 
 
@@ -248,39 +361,6 @@ button {
 /* INPUTS DE TABLA */
 
 
-.card__counter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    padding: 5px;
-    background: #F7F7F7;
-    border-radius: 50px;
-    justify-content: space-between;
-    width: 50%;
-  }
-  
-  .card__counter-score, .card__btn {
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--main-color);
-  }
-  
-  .card__btn {
-    width: 30%;
-    height: 30px;
-    border-radius: 100%;
-    border: none;
-    background: transparent;
-  }
-
-  .card__btn:hover{
-    background: #dedede;
-  }
-  
-  .card__btn-plus {
-    background: var(--bg-color);
-  }
 
   /* CON ESTO QUITO LOS BOTONES PREDETERMINADOS DE INPUT TYPE NUMBER */
 input[type=number]::-webkit-inner-spin-button,
@@ -298,3 +378,19 @@ input[type=number]{
 }
 
 /* --------------- */
+
+
+#articles{
+  overflow: scroll; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scroll-behavior: smooth; 
+  display: grid;
+  grid-template-columns: 20rem 20rem 20rem;
+  margin-top: 100px;
+  row-gap: 3rem;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+}
