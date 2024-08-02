@@ -206,12 +206,13 @@ caption {
     scroll-behavior: smooth; 
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    column-gap: 2rem;
-    row-gap: 3rem;
+    column-gap: 2%;
+    row-gap: 10%;
     height: 90%;
     justify-content: center;
-    align-items: center;
+    justify-items: center;
     overflow-y: scroll;
+    box-sizing: border-box;
   }
 
 /* ----- Estilo de las cartas---------- */
@@ -220,19 +221,17 @@ caption {
     --bg-color: #ffffff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
-    padding: 20px;
-    width: 80%;
+    padding: 25px;
+    width: 75%;
+    height: 90%;
     background: var(--darkness-gray);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5% 0%;
   }
   
-  .card__back svg, .card__menu svg {
-    width: 20px;
-    height: 20px;
-  }
+  
   
   .card__wrapper {
     display: flex;
@@ -242,74 +241,93 @@ caption {
   }
   
   .card__img {
-    width: 170px;
-    height: 170px;
+    width: 60%;
+    height: 100%;
     background: linear-gradient(90deg, #FFF8F7, #F0F7DF);
     border-radius: 100%;
     margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .imgs{
+    width: 70%;
+    object-fit: contain;
     mix-blend-mode: multiply;
-    background-color: white;
   }
   
-  .card__img svg {
-    height: 150px;
-    transform: rotate(-45deg) translate(15px, 0px);
-  }
   
   .card__title {
-    
+    text-align: center;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 2vw;
     color: var(--main-color);
   }
   
   .card__subtitle {
     display: flex;
+    box-sizing: border-box;
+    margin: 0 2%;
     justify-content: space-between;
+    width: 100%;
+    height: 10%;
     align-items: center;
-    font-weight: 500;
-    font-size: 15px;
     color: var(--main-color);
-    letter-spacing: 0.5px;
   }
   
   .card__price {
-    font-weight: 600;
-    font-size: 22px;
+    display: flex;
+    width: 10%;
+    font-weight: bold;
+    font-size: 20px;
     color: var(--main-color);
   }
   
   .card__counter {
     display: flex;
+    justify-self: end;
+    justify-content: right;
+    box-sizing: border-box;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
-    padding: 5px;
-    background: #F7F7F7;
+    justify-content: space-between;
+    margin-right: 6%;
+    width: 75%;
+    height: 110%;
+    background: var(--bg-color);
     border-radius: 50px;
   }
   
   .card__counter-score, .card__btn {
-    font-weight: 700;
-    font-size: 22px;
+    font-weight: 500;
+    font-size: 1.5vw;
     color: var(--main-color);
+  }
+
+  .card__counter-score{
+    width: 100%;
   }
   
   .card__btn {
-    width: 30px;
-    height: 30px;
+    width: 15%;
+    height: 10%;
     border-radius: 100%;
     border: none;
-    background: transparent;
+    background: var(--buttons-color);
+  }
+
+  .card__btn:hover{
+    background-color: var(--line-color);
   }
   
   .card__btn-plus {
-    background: var(--bg-color);
+    margin-left: 2%;
   }
 
+  .card__btn-minus{
+    margin-right: 2%;
+  }
 
 
 
@@ -393,7 +411,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 input[type=number]{
-    width: 2ch;
+    width: 3ch;
     border: none;
     background-color: rgba(0, 0, 0, 0);
     text-align: center;
