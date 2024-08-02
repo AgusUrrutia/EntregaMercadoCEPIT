@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header class="menu" id="menu">
+        <nav class="navbar-menu">
+            <div class="navbar-menu-icon">
+                <a class="navbar-menu-icon-link" href="../../index.html">
+                    <img class="menu-icon" src="../../assets/mercado.png" alt="">    
+                </a>
+            </div>
+            <ul class="navbar-menu-cont">
+                <a class="navbar-menu-links" href="../articles/articles.html"> <li>  ARTICLES </li> </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="cont_form">
+            <form class="form" id="contactForm">
+                <p class="title">Register </p>
+                <p class="message">Signup now and get full access to our app. </p>
+                <div class="flex">
+                    <label>
+                        <input required="" placeholder="" type="text" class="input"  id="nombre">
+                        <span>Firstname</span>
+                    </label>
+            
+                    <label>
+                        <input required="" placeholder="" type="text" class="input" id="apellido">
+                        <span>Lastname</span>
+                    </label>
+                </div>  
+                        
+                <label>
+                    <input required="" placeholder="" type="email" class="input" id="email">
+                    <span>Email</span>
+                </label> 
+                    
+                <label>
+                    <input required="" placeholder="" type="number" class="input" id="telefono">
+                    <span>Telefono</span>
+                </label>
+                <label>
+                    <textarea class="input" name="textarea" id="sugerencia"></textarea>
+                </label>
+                <button class="submit">Submit</button>
+                <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
+            </form>
+        </div>
+    </main>
+    <script src="suggestions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
