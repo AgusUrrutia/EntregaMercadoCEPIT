@@ -68,5 +68,19 @@
         "stock-actual": 30,
         "precio": 4.0,
         "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+    },
+    {
+        "nombre": "Zanahoria",
+        "stock-inicial": 150,
+        "stock-actual": 150,
+        "precio": 0.3,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Carrots.jpg"
+    },
+    {
+        "nombre": "Yogur",
+        "stock-inicial": 90,
+        "stock-actual": 90,
+        "precio": 1.0,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Plain_yogurt.jpg"
     }
 ]

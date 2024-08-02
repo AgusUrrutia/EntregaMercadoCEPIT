@@ -60,7 +60,7 @@ let arts = [
         "stock_actual": 60,
         "stock_permanente": 60,
         "precio": 50,
-        "imagen": "https://e7.pngegg.com/pngimages/917/686/png-clipart-chicken-as-food-buffalo-wing-poultry-chicken-breast-chicken-food-animals.png"
+        "imagen": "https://png.pngtree.com/png-clipart/20210425/original/pngtree-raw-chicken-fresh-meal-chicken-breast-png-image_6248001.jpg"
     },
     {
         "id": 7,
@@ -88,6 +88,24 @@ let arts = [
         "stock_permanente": 30,
         "precio": 4,
         "imagen": "https://pngimg.com/d/coffee_jar_PNG17056.png"
+    },
+    {
+        "id": 10,
+        "nombre": "Zanahoria",
+        "stock_inicial": 150,
+        "stock_actual": 150,
+        "stock_permanente": 150,
+        "precio": 3,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF66-3GzB2hOlF1oRg5u_obHSlxSUf95sjEA&s"
+    },
+    {
+        "id": 11,
+        "nombre": "Yogurt",
+        "stock_inicial": 90,
+        "stock_actual": 90,
+        "stock_permanente": 90,
+        "precio": 10,
+        "imagen": "https://www.conaprole.uy/wp-content/uploads/2013/08/2120-Conaprole-yogur-int-con-DDL-200g.png"
     }
 ]
 
@@ -106,123 +124,127 @@ let svg = `
 let rows = document.getElementById('rows');
 let stocks = document.getElementsByClassName('stocks');
 
-
-function refreshCart(){
-    if(cart.length > 0){
-        cart.forEach(product => {
-        let row = document.createElement('tr');
-        // row.classList.add('');
-        rows.innerHTML = `      
-                
+function refreshCart() {
+    rows.innerHTML = '';
+    if (cart.length > 0) {
+        cart.forEach(product => { 
+            let row = document.createElement('tr');
+            row.innerHTML = `                
                 <td>${product.nombre}</td>
                 <td>${product.stock_actual}</td>
                 <td>${product.precio_total}</td>
-                <td>
+                <td class="final_td">
                     <button class="btn_delete" data-id="${product.id}">
                         X
                     </button>
                 </td>
-        `;
-        articles.appendChild(row);
-    });
-    }else{
-        rows.innerHTML = ""
+            `;
+            rows.appendChild(row);
+        });
+        calculateTotal();
+    } else {
+        console.log(cart);
+        rows.innerHTML = "";
     }
-    
-    console.log("Hola");
     addBtnsactions();
 }
 
+let total = document.getElementById('total_cart');
+function calculateTotal(){
+   let calculatedTotal = 0;
+   cart.forEach(product => {
+        calculatedTotal += product.precio_total;
+   });
 
-function addBtnsactions(){
-     // Se ejecuta ésta parte cuando termine de cargar todo el DOM para prevenir coliciones
+   total.innerHTML = calculatedTotal;
+}
 
-        document.querySelectorAll('.btn_delete').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const id = button.getAttribute('data-id');
-                console.log("HOLAAA");
-                let art = arts[id];//Obtengo el objeto del arreglo en la posicion de donde surge algun cambio en el input
-                let stock = stocks[id];//El stock capturado, es el que cambia en el HTML y no posee control del Objeto
-                let artCart = cart[id];
-                art.stock_actual = art.stock_actual + artCart.stock_actual;
-                art.stock_inicial = art.stock_actual
+
+
+function addBtnsactions() {
+    // Obtenemos todos los botones, y eliminamos los eventos asignados, para luego crearlo de nuevo.
+    let buttons = document.querySelectorAll('.btn_delete, .inputs_count, .card__btn-minus, .card__btn-plus, .addToCartBtn');
+    buttons.forEach(button => {
+        const clone = button.cloneNode(true);
+        button.parentNode.replaceChild(clone, button);
+    });
+
+    document.querySelectorAll('.btn_delete').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = button.getAttribute('data-id');
+
+            let art = arts.find(a => a.id == id);
+            if (!art) return; // // Si no existe el articulo, interrupcion forzosa
+            let stock = stocks[id];
+            let artCart = cart.find(a => a.id == id);
+            if (!artCart) return; // // Si no existe el articulo en el carrito, interrupcion forzosa
+
+            art.stock_actual = art.stock_actual + artCart.stock_actual;
+            art.stock_inicial = art.stock_actual;
+            stock.innerHTML = art.stock_actual;
+            cart = cart.filter(e => e.id !== art.id);
+            console.log(cart);
+            refreshCart();
+            calculateTotal();
+        });
+    });
+
+    document.querySelectorAll('.inputs_count').forEach(input => {
+        input.addEventListener('change', (e) => {
+            e.preventDefault();
+            const id = input.getAttribute('data-id');
+            let stock = stocks[id];
+            let art = arts.find(a => a.id == id);
+            if (!art) return; //  Si no existe el articulo, interrupcion forzosa
+
+            if (e.target.value > art.stock_actual) {
+                alert("No se puede asignar ese valor!!!");
+                e.target.value = 0;
+            } else {
+                art.stock_actual = art.stock_inicial - e.target.value;
                 stock.innerHTML = art.stock_actual;
-    
-                cart = cart.filter(e=>e.id !== art.id);
-                console.log(cart);
-                refreshCart()
-            });
-          });
-    
-        
-        
-
-
-
-
-
-       
-
-
-
-
-        
-
-        document.querySelectorAll('.inputs_count').forEach(input => {
-            input.addEventListener('change', (e)=> {
-                e.preventDefault()
-                const id = input.getAttribute('data-id')
-                let stock = stocks[id];//El stock capturado, es el que cambia en el HTML y no posee control del Objeto
-                let art = arts[id];//Obtengo el objeto del arreglo en la posicion de donde surge algun cambio en el input
-                if(e.target.value > art.stock_actual){
-                    alert("No se puede asigar ese valor!!!");
-                }else{
-                    art.stock_actual = art.stock_inicial - e.target.value; // Seteo el valor del objeto
-                    stock.innerHTML = art.stock_actual; // Seteo el HTML
-                }
-            });
+            }
         });
+    });
 
-        // Añadir eventos a los botones de decremento
-        document.querySelectorAll('.card__btn-minus').forEach(button => {
-            button.addEventListener('click', () => {
-                const id = button.getAttribute('data-id');
-                const input = document.querySelector(`input[data-id="${id}"]`);
-                if (input) {
-                input.value = Math.max(0, Number(input.value) - 1);
-                input.dispatchEvent(new Event('change'));
-                }
-            });
-        });
-      
-        // Añadir eventos a los botones de incremento
-        document.querySelectorAll('.card__btn-plus').forEach(button => {
+    document.querySelectorAll('.card__btn-minus').forEach(button => {
         button.addEventListener('click', () => {
             const id = button.getAttribute('data-id');
             const input = document.querySelector(`input[data-id="${id}"]`);
             if (input) {
-              input.value = Number(input.value) + 1;
-              input.dispatchEvent(new Event('change'));
+                input.value = Math.max(0, Number(input.value) - 1);
+                input.dispatchEvent(new Event('change'));
             }
-          });
         });
+    });
 
-        // Boton de agregar al carrito de compra
-        document.querySelectorAll(".addToCartBtn").forEach(button=>{
-        button.addEventListener('click',()=>{
-            const id = button.getAttribute('data-id')
+    document.querySelectorAll('.card__btn-plus').forEach(button => {
+        button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
             const input = document.querySelector(`input[data-id="${id}"]`);
-            if (input.value !== 0) {
-                let art = arts[id]; //Obtengo el objeto del arreglo en la posicion de donde se preciona el boton "addToCart"
+            if (input) {
+                input.value = Math.max(0, Number(input.value) + 1);
+                console.log(input.value);
+                input.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+
+    document.querySelectorAll(".addToCartBtn").forEach(button => {
+        button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            const input = document.querySelector(`input[data-id="${id}"]`);
+            if (input.value > 0) {
+                let art = arts.find(a => a.id == id);
+                if (!art) return; // Si no existe el articulo, interrupcion forzosa
                 let valorInput = input.value;
                 art.stock_inicial = art.stock_actual;
-                let exist = cart.some((article)=>
+                let exist = cart.some((article) =>
                     article.id === art.id
                 );
-                if(!exist){
-                    let artCart = 
-                    {
+                if (!exist) {
+                    let artCart = {
                         id: art.id,
                         nombre: art.nombre,
                         stock_actual: Number(valorInput),
@@ -232,11 +254,10 @@ function addBtnsactions(){
                     input.value = 0;
                     console.log(cart);
                     refreshCart();
-                }else{
-                    
-                    let artCart = cart.find((article)=>
-                            article.id === art.id 
-                        );
+                } else {
+                    let artCart = cart.find((article) =>
+                        article.id === art.id
+                    );
                     artCart.stock_actual = Number(artCart.stock_actual) + Number(valorInput);
                     artCart.precio_total = artCart.stock_actual * art.precio;
                     cart = cart.filter(elemento => elemento.id !== artCart.id);
@@ -245,69 +266,41 @@ function addBtnsactions(){
                     console.log(cart);
                     refreshCart();
                 }
-
-                
             }
-        })
         });
-    
+    });
 }
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    let cart_table = document.getElementById('cart_table');
-    document.getElementById('toggle_cart').addEventListener('click',()=>{
-        cart_table.classList.toggle('hidden_cart');
-    });
-
-    
-    
-
-
-
-
-
-
-    let articles = document.getElementById('articles');
-
-    arts.forEach(product => {
-        let row = document.createElement('div');
-        row.classList.add('card');
-        row.innerHTML = `      
-                <div class="card__img">
-                    <img src="${product.imagen}" alt="${product.nombre}" width="160" class="imgs">
-                    
-                </div>
-                <div class="card__title">${product.nombre}</div>
-                <div class="card__subtitle">
-                    <div class="card__price">$${product.precio}</div>
-                    <div class="card__counter">
-                        <button class="card__btn card__btn-minus" data-id="${product.id}">-</button>
-                        <input type="number" class="card__counter-score inputs_count" data-id="${product.id}" max="999">
-                        <button class="card__btn card__btn-plus" data-id="${product.id}">+</button>
-                    </div>
-                </div>
-                <div class="card__wrapper">
-                    <p> Stock: <span class="stocks">${product.stock_actual}</span> </p>
-                    <button class="tooltip addToCartBtn" data-id="${product.id}">
-                        ${svg}
-                    </button>
-                </div>
-        `;
-        articles.appendChild(row);
-    });
-    addBtnsactions();
+let cart_table = document.getElementById('cart_table');
+document.getElementById('toggle_cart').addEventListener('click', () => {
+    cart_table.classList.toggle('hidden_cart');
 });
 
+let articles = document.getElementById('articles');
 
-
-
-{/* <td><img src="${product.imagen}" alt="${product.nombre}" width="50"></td> */}
-
-
-
-
-
-
+arts.forEach(product => {
+    let row = document.createElement('div');
+    row.classList.add('card');
+    row.innerHTML = `      
+        <div class="card__img">
+            <img src="${product.imagen}" alt="${product.nombre}" width="160" class="imgs">
+        </div>
+        <div class="card__title">${product.nombre}</div>
+        <div class="card__subtitle">
+            <div class="card__price">$${product.precio}</div>
+            <div class="card__counter">
+                <button class="card__btn card__btn-minus" data-id="${product.id}">-</button>
+                <input type="number" class="card__counter-score inputs_count" data-id="${product.id}" max="999">
+                <button class="card__btn card__btn-plus" data-id="${product.id}">+</button>
+            </div>
+        </div>
+        <div class="card__wrapper">
+            <p> Stock: <span class="stocks">${product.stock_actual}</span> </p>
+            <button class="tooltip addToCartBtn" data-id="${product.id}">
+                ${svg}
+            </button>
+        </div>
+    `;
+    articles.appendChild(row);
+});
 addBtnsactions();
