@@ -125,7 +125,12 @@ main{
   object-fit: contain;
 }
 /* ----------------------- */
-
+main{
+  width: 85%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
 
 
 /* FORMULARIO */
@@ -134,83 +139,63 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 .form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    justify-content: center;
+    width: 70%;
+    min-height: 75%;
     gap: 10px;
-    max-width: 700px;
-    background-color: #fff;
-    padding: 20px;
-    padding-right: 50px;
+    background-color: var(--cream);
+    padding: 5% 2%;
     border-radius: 20px;
     position: relative;
     box-sizing: border-box;
+    text-align: center;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.5), 10px 0px 10px rgba(0, 0, 0, 0.5);
+
   }
   
   .title {
     font-size: 28px;
-    color: royalblue;
+    color: var(--font-color);
     font-weight: 600;
-    letter-spacing: -1px;
     position: relative;
     display: flex;
     align-items: center;
-    padding-left: 30px;
-  }
+    justify-content: center;
+    letter-spacing: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  } 
   
-  .title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: royalblue;
-  }
+
   
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: royalblue;
-  }
-  
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-  
-  .message, .signin {
+  .message {
     color: rgba(88, 87, 87, 0.822);
     font-size: 14px;
   }
   
-  .signin {
-    text-align: center;
-  }
-  
-  .signin a {
-    color: royalblue;
-  }
-  
-  .signin a:hover {
-    text-decoration: underline royalblue;
-  }
   
   .flex {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 6px;
+    margin-top: 5%;
   }
   
+  .flex label{
+    width: 48%;
+  }
+ 
   .form label {
     position: relative;
   }
   
   .form label .input {
+    box-sizing: border-box;
     width: 100%;
     padding: 10px 10px 20px 10px;
     outline: 0;
@@ -240,22 +225,23 @@ main{
   }
   
   .form label .input:valid + span {
-    color: green;
+    color: var(--line-color);
   }
   
   .submit {
     border: none;
     outline: none;
-    background-color: royalblue;
+    background-color: var(--font-color);
     padding: 10px;
     border-radius: 10px;
     color: #fff;
     font-size: 16px;
     transform: .3s ease;
+    transition: all 0.4s;
   }
   
   .submit:hover {
-    background-color: rgb(56, 90, 194);
+    background-color: var(--secondary-font-color);
   }
   
   @keyframes pulse {
@@ -270,6 +256,7 @@ main{
     }
   }
 
+  
 
 /* ---------------- */
 

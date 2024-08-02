@@ -1,86 +1,86 @@
 [
     {
-        "nombre": "Manzana",
-        "stock-inicial": 100,
-        "stock-actual": 100,
-        "precio": 0.5,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg"
+        "name": "Apple",
+        "initial-stock": 100,
+        "current-stock": 100,
+        "price": 0.5,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg"
     },
     {
-        "nombre": "Leche",
-        "stock-inicial": 50,
-        "stock-actual": 50,
-        "precio": 1.2,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Liquor_store_milk.jpg"
+        "name": "Milk",
+        "initial-stock": 50,
+        "current-stock": 50,
+        "price": 1.2,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Liquor_store_milk.jpg"
     },
     {
-        "nombre": "Pan",
-        "stock-inicial": 200,
-        "stock-actual": 200,
-        "precio": 0.8,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Whole_wheat_bread_slices.jpg"
+        "name": "Bread",
+        "initial-stock": 200,
+        "current-stock": 200,
+        "price": 0.8,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Whole_wheat_bread_slices.jpg"
     },
     {
-        "nombre": "Huevos",
-        "stock-inicial": 300,
-        "stock-actual": 300,
-        "precio": 0.1,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Huevos_01.jpg"
+        "name": "Eggs",
+        "initial-stock": 300,
+        "current-stock": 300,
+        "price": 0.1,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Huevos_01.jpg"
     },
     {
-        "nombre": "Queso",
-        "stock-inicial": 40,
-        "stock-actual": 40,
-        "precio": 2.5,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Swiss_cheese_cubes.jpg"
+        "name": "Cheese",
+        "initial-stock": 40,
+        "current-stock": 40,
+        "price": 2.5,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Swiss_cheese_cubes.jpg"
     },
     {
-        "nombre": "Tomate",
-        "stock-inicial": 120,
-        "stock-actual": 120,
-        "precio": 0.6,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg"
+        "name": "Tomato",
+        "initial-stock": 120,
+        "current-stock": 120,
+        "price": 0.6,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg"
     },
     {
-        "nombre": "Pollo",
-        "stock-inicial": 60,
-        "stock-actual": 60,
-        "precio": 5.0,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Roast_chicken_with_potatoes.jpg"
+        "name": "Chicken",
+        "initial-stock": 60,
+        "current-stock": 60,
+        "price": 5.0,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Roast_chicken_with_potatoes.jpg"
     },
     {
-        "nombre": "Cereal",
-        "stock-inicial": 80,
-        "stock-actual": 80,
-        "precio": 3.0,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cereal.jpg"
+        "name": "Cereal",
+        "initial-stock": 80,
+        "current-stock": 80,
+        "price": 3.0,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/57/Cereal.jpg"
     },
     {
-        "nombre": "Jugo de Naranja",
-        "stock-inicial": 100,
-        "stock-actual": 100,
-        "precio": 1.5,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Orange_juice_1.jpg"
+        "name": "Orange Juice",
+        "initial-stock": 100,
+        "current-stock": 100,
+        "price": 1.5,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Orange_juice_1.jpg"
     },
     {
-        "nombre": "Café",
-        "stock-inicial": 30,
-        "stock-actual": 30,
-        "precio": 4.0,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+        "name": "Coffee",
+        "initial-stock": 30,
+        "current-stock": 30,
+        "price": 4.0,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
     },
     {
-        "nombre": "Zanahoria",
-        "stock-inicial": 150,
-        "stock-actual": 150,
-        "precio": 0.3,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Carrots.jpg"
+        "name": "Carrot",
+        "initial-stock": 150,
+        "current-stock": 150,
+        "price": 0.3,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Carrots.jpg"
     },
     {
-        "nombre": "Yogur",
-        "stock-inicial": 90,
-        "stock-actual": 90,
-        "precio": 1.0,
-        "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Plain_yogurt.jpg"
+        "name": "Yogurt",
+        "initial-stock": 90,
+        "current-stock": 90,
+        "price": 1.0,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Plain_yogurt.jpg"
     }
 ]

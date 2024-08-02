@@ -1,7 +1,7 @@
 let arts = [
     {
         "id": 0,
-        "nombre": "Manzana",
+        "nombre": "Apple",
         "stock_inicial": 100,
         "stock_actual": 100,
         "stock_permanente": 100,
@@ -10,7 +10,7 @@ let arts = [
     },
     {
         "id": 1,
-        "nombre": "Leche",
+        "nombre": "Milk",
         "stock_inicial": 50,
         "stock_actual": 50,
         "stock_permanente": 50,
@@ -19,7 +19,7 @@ let arts = [
     },
     {
         "id": 2,
-        "nombre": "Pan",
+        "nombre": "Bread",
         "stock_inicial": 200,
         "stock_actual": 200,
         "stock_permanente": 200,
@@ -28,7 +28,7 @@ let arts = [
     },
     {
         "id": 3,
-        "nombre": "Huevos",
+        "nombre": "Eggs",
         "stock_inicial": 300,
         "stock_actual": 300,
         "stock_permanente": 300,
@@ -37,7 +37,7 @@ let arts = [
     },
     {
         "id": 4,
-        "nombre": "Queso",
+        "nombre": "Cheese",
         "stock_inicial": 40,
         "stock_actual": 40,
         "stock_permanente": 40,
@@ -46,7 +46,7 @@ let arts = [
     },
     {
         "id": 5,
-        "nombre": "Tomate",
+        "nombre": "Tomato",
         "stock_inicial": 120,
         "stock_actual": 120,
         "stock_permanente": 120,
@@ -55,7 +55,7 @@ let arts = [
     },
     {
         "id": 6,
-        "nombre": "Pollo",
+        "nombre": "Chicken",
         "stock_inicial": 60,
         "stock_actual": 60,
         "stock_permanente": 60,
@@ -73,7 +73,7 @@ let arts = [
     },
     {
         "id": 8,
-        "nombre": "Jugo de Naranja",
+        "nombre": "Orange Juice",
         "stock_inicial": 100,
         "stock_actual": 100,
         "stock_permanente": 100,
@@ -82,7 +82,7 @@ let arts = [
     },
     {
         "id": 9,
-        "nombre": "Café",
+        "nombre": "Coffee",
         "stock_inicial": 30,
         "stock_actual": 30,
         "stock_permanente": 30,
@@ -91,7 +91,7 @@ let arts = [
     },
     {
         "id": 10,
-        "nombre": "Zanahoria",
+        "nombre": "Carrot",
         "stock_inicial": 150,
         "stock_actual": 150,
         "stock_permanente": 150,
@@ -108,6 +108,7 @@ let arts = [
         "imagen": "https://www.conaprole.uy/wp-content/uploads/2013/08/2120-Conaprole-yogur-int-con-DDL-200g.png"
     }
 ]
+
 
 let cart = [];
 
