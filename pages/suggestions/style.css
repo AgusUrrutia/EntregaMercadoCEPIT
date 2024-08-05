@@ -142,8 +142,9 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70%;
-    min-height: 75%;
+    width: 60%;
+    /* min-height: 75%; */
+    max-width: 800px;
     gap: 10px;
     background-color: var(--cream);
     padding: 5% 2%;
