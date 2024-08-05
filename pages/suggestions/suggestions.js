@@ -2,7 +2,7 @@
 
 
 document.getElementById('contactForm').addEventListener('submit', function() {
-    const fields = this.querySelectorAll('input, textarea, select');
+    const fields = this.querySelectorAll('input, textarea');
     let formData = '';
     fields.forEach(field => {
         formData += `${field.id}: ${field.value}\n`;
