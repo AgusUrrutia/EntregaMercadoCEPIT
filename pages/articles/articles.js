@@ -144,7 +144,6 @@ function refreshCart() {
         });
         calculateTotal();
     } else {
-        console.log(cart);
         rows.innerHTML = "";
     }
     addBtnsactions();
@@ -226,7 +225,6 @@ function addBtnsactions() {
             const input = document.querySelector(`input[data-id="${id}"]`);
             if (input) {
                 input.value = Math.max(0, Number(input.value) + 1);
-                console.log(input.value);
                 input.dispatchEvent(new Event('change'));
             }
         });

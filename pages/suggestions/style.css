@@ -30,6 +30,7 @@ body{
     background-attachment: fixed;
     justify-content: space-between;
 }
+
 main{
     will-change: transform;
     display: flex;
@@ -39,10 +40,6 @@ main{
     height: 100%;
     box-sizing: border-box;
     margin: 0;
-    /* background-image: url(../../assets/fondo-main.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;    */
 }
 
 
