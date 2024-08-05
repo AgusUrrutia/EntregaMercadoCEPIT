@@ -1,6 +1,4 @@
 
-
-
 document.getElementById('contactForm').addEventListener('submit', function() {
     const fields = this.querySelectorAll('input, textarea');
     let formData = '';

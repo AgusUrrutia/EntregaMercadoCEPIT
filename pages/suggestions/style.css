@@ -241,17 +241,6 @@ main{
     background-color: var(--secondary-font-color);
   }
   
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-  }
 
   
 
