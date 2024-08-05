@@ -198,7 +198,7 @@ function addBtnsactions() {
             let art = arts.find(a => a.id == id);
             if (!art) return; //  Si no existe el articulo, interrupcion forzosa
 
-            if (e.target.value > art.stock_actual) {
+            if (e.target.value > art.stock_actual || e.target.value<=0) {
                 alert("No se puede asignar ese valor!!!");
                 e.target.value = 0;
             } else {
